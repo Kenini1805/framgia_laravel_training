@@ -21,3 +21,14 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+//Tạo factory cho Product Model
+$factory->define(App\Models\Product::class, function (Faker $faker) {
+    return [
+        'product_name' => $faker->name,
+        'price' => rand(1, 1000),
+        'quantity' => rand(1, 100),
+        'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'hot' => $faker->boolean(1),
+    ];
+});
