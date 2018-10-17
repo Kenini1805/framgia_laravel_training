@@ -4,16 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Category extends Model
 {
     //
     protected $fillable = [
-        'amount', 
-        'description', 
-        'status', 
+        'category', 
+        'active', 
     ];
 
     public function product() {
-    	return $this->belongsToMany(Product::class);
+    	return $this->hasMany(Product::class);
     }
 }
