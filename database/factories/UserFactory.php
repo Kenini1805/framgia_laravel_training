@@ -24,11 +24,14 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 //Tạo factory cho Product Model
 $factory->define(App\Models\Product::class, function (Faker $faker) {
+    $input = ['chai', 'cân', 'miếng', 'cái'];
     return [
         'product_name' => $faker->name,
         'price' => rand(1, 1000),
         'quantity' => rand(1, 100),
+        'unit' => $input[array_rand($input)],
         'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        'hot' => $faker->boolean(1),
+        'hot' => $faker->boolean(),
+        'status' => $faker->boolean(),
     ];
 });

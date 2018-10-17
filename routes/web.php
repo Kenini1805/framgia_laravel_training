@@ -19,3 +19,8 @@ Route::get('/photo', [
 	'as' => 'anh',
 	'uses' => 'PhotoController@index'
 ]);
+
+Route::get('/product', [
+	'as' => 'product',
+	'uses' => 'HomeController@index'
+]);

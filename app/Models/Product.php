@@ -14,4 +14,12 @@ class Product extends Model
         'description',
         'hot',
     ];
+
+    public function category() {
+    	return $this->belongsTo(Category::class);
+    }
+
+    public function order() {
+    	return $this->belongsToMany(Order::class);
+    }
 }
